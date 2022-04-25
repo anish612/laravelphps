@@ -1,35 +1,4 @@
-<?php
- /* Create simple Website with PHP - https://coursesweb.net/php-mysql/ */
 
-// create an array with data for title, and meta, for each page
-$pgdata = array();
-$pgdata['index'] = array(
- 'title'=>'Title for Home page',
- 'description'=>'Here add the description for Home page',
- 'keywords'=>'meta keywords, for, home page'
-);
-$pgdata['about_me'] = array(
- 'title'=>'Title for About Me page',
- 'description'=>'Description for About Me, https://coursesweb.net',
- 'keywords'=>'about me, https://coursesweb.net'
-);
-$pgdata['images'] = array(
- 'title'=>'Title for Images',
- 'description'=>'Here add the description for the page with images',
- 'keywords'=>'images, pictures, photo'
-);
-
-// set the page name
-$pgname = isset($_GET['pg']) ? trim(strip_tags($_GET['pg'])) : 'index';
-
-// get title, and meta data for current /accessed page
-$title = $pgdata[$pgname]['title'];
-$description = $pgdata[$pgname]['description'];
-$keywords = $pgdata[$pgname]['keywords'];
-
-// set header for utf-8 encode
-header('Content-type: text/html; charset=utf-8');
-?>
 <!doctype html>
 <html>
 <head>
